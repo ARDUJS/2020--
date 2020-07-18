@@ -12,11 +12,10 @@ os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  # 实现卡号匹配
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 do_train = True
 # do_train = False
+
 do_test = True
 do_eval = True
 # do_eval = False
-task_name = 'Discourage'
-MODEL_NAME = task_name
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 train_batch_size = 8
 test_batch_size = 8
@@ -30,6 +29,9 @@ seed = 42
 do_lower_case = True
 learning_rate = 2e-5
 warmup_proportion = 0.1
+pretrained = 'bert-base-chinese'
+MODEL_NAME = 'Classfy'
+init_checkpoint = None
 
 
 max_seq_length = 256
